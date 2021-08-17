@@ -11,6 +11,7 @@ const App: Component = () => {
       <main class="container mx-auto p-4 flex-grow relative">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<p>Hello, world!</p>} />
         </Routes>
       </main>
       <footer class="bg-gray-100 text-gray-500 text-center py-4">
