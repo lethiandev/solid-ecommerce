@@ -1,12 +1,22 @@
 import type { Component } from "solid-js"
-import { Route, Router, Routes } from "solid-app-router"
+import { Route, Routes } from "solid-app-router"
+
+import { Header } from "./components/Header"
 import { HomePage } from "./pages/HomePage"
 
 const App: Component = () => {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-    </Routes>
+    <div class="bg-gray-50 min-h-screen flex flex-col">
+      <Header />
+      <main class="container mx-auto p-4 flex-grow relative">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </main>
+      <footer class="bg-gray-100 text-gray-500 text-center py-4">
+        <span>My Store&trade; 2021&copy;</span>
+      </footer>
+    </div>
   )
 }
 
