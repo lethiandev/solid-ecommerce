@@ -1,4 +1,4 @@
-import { Component, createSignal } from "solid-js"
+import { Component, createSignal, For } from "solid-js"
 import { Loader } from "../components/Loader"
 import { ShopItem } from "../components/ShopItem"
 import { Product } from "../models/Product"
@@ -18,9 +18,7 @@ export const HomePage: Component = () => {
     <>
       {loading() ? <Loader /> : null}
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {products().map(product => (
-          <ShopItem product={product} />
-        ))}
+        <For each={products()}>{product => <ShopItem product={product} />}</For>
       </div>
     </>
   )
